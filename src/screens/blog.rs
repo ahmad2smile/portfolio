@@ -1,13 +1,13 @@
 use yew::prelude::*;
 
-pub struct Contact {}
+pub struct Blog {}
 
-impl Component for Contact {
+impl Component for Blog {
     type Message = ();
     type Properties = ();
 
     fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        Contact {}
+        Blog {}
     }
 
     fn update(&mut self, _: <Self as yew::html::Component>::Message) -> bool {
@@ -16,10 +16,9 @@ impl Component for Contact {
 
     fn view(&self) -> Html {
         html! {
-            <div class="contact">
-                <h2 class="heading">{"Contact Me!"}</h2>
-                <a href="mailto:ahmad2smile@protonmail.com">{"ahmad2smile@protonmail.com"}</a>
-            </div>
+            <>
+                <div class="qoute">{"Blog Me!"}</div>
+            </>
         }
     }
 }

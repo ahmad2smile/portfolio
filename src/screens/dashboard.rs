@@ -16,10 +16,10 @@ impl Component for Dashboard {
 
     fn view(&self) -> Html {
         html! {
-            <>
+            <div class="dashboard">
                 <div class="qoute">{"\"Cogito Ergo Sum\""}</div>
                 <div class="credit">{"Some guy..."}</div>
-            </>
+            </div>
         }
     }
 }
