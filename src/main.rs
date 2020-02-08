@@ -1,7 +1,11 @@
+#![recursion_limit = "256"]
+
 use yew::{html, Component, ComponentLink, Html};
 
-mod screens;
-use screens::dashboard::Dashboard;
+pub mod screens;
+
+mod routes;
+use routes::Navigation;
 
 struct App {}
 
@@ -19,11 +23,11 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
-            <Dashboard />
+            <Navigation />
         }
     }
 }
 
 fn main() {
-    yew::start_app::<App>();
+    yew::start_app::<Navigation>();
 }

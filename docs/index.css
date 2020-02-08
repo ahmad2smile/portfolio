@@ -1,4 +1,4 @@
-.dashboard-container {
+.container {
 	background: #fff;
 	box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15);
 	display: grid;
@@ -26,20 +26,10 @@
 	color: black;
 }
 
-.contact-container {
-	background: #fff;
-	margin-top: 50px;
-	box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15);
-	width: 85vw;
-	height: 20vh;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
 .header {
 	font-size: 18px;
-	margin: 20px;
+	margin: 20px 20px 0 20px;
+	display: flex;
 }
 
 .content {
