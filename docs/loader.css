@@ -1,0 +1,53 @@
+html {
+	width: 100vw;
+	min-height: 100%;
+	background: linear-gradient(-45deg, #001d3a, #e9f0f7);
+	font-family: Arial, Serif, Sans-Serif;
+}
+
+.loading {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 50%;
+	height: 2px;
+	background: #fff;
+	overflow: hidden;
+}
+
+@keyframes loading {
+	50% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(300%);
+	}
+}
+
+.loading:before {
+	content: "";
+	position: absolute;
+	left: 40%;
+	top: 0;
+	width: 33%;
+	height: 100%;
+	transform: translateX(-300%);
+	background: #001d3a;
+	animation: loading 1.5s linear infinite;
+}
+
+.text {
+	position: absolute;
+	top: 43%;
+	color: #fff;
+	width: 99%;
+	text-align: center;
+}
+
+.content-body {
+	max-width: 900px;
+	margin: 0 auto;
+}
