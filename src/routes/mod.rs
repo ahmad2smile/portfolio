@@ -5,7 +5,7 @@ use crate::screens::{contact::Contact, dashboard::Dashboard};
 
 #[derive(Switch, Clone, Debug)]
 pub enum Routes {
-    #[to = "/contact"]
+    #[to = "/#contact"]
     ContactRoute,
     #[to = "/"]
     DashboardRoute,
@@ -54,7 +54,7 @@ impl Component for Navigation {
         match msg {
             Msg::ChangeRoute(route) => {
                 let route_string = match route {
-                    Routes::ContactRoute => format!("/contact"),
+                    Routes::ContactRoute => format!("/#contact"),
                     Routes::DashboardRoute => format!("/"),
                 };
 
