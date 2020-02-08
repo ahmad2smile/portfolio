@@ -73,13 +73,31 @@ impl Component for Navigation {
     fn view(&self) -> Html {
         html! {
             <div class="container">
-                <div class="header">
-                    <p class="name">{"Ahmad, Shafiq"}</p>
-                    <nav class="menu">
-                        <div onclick=&self.change_route(Routes::DashboardRoute) > {"Root"} </div>
-                        <div onclick=&self.change_route(Routes::ContactRoute) > {"Contact"} </div>
-                    </nav>
-                </div>
+                <nav class="nav-container">
+                    <p class="header">{"Ahmad, Shafiq"}</p>
+                    <ul class="nav flex-column">
+                        <li class="nav-item px-3">
+                            <a class="nav-link active" onclick=&self.change_route(Routes::DashboardRoute)>
+                                {"Root"}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick=&self.change_route(Routes::ContactRoute) >
+                                {"Blog"}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick=&self.change_route(Routes::ContactRoute) >
+                                {"Contact"}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a target="_blank" href="https://github.com/ahmad2smile/" class="nav-link">
+                                {"GitHub"}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
                 <div class="content">
                     {
                         match Routes::switch(self.route.clone()) {

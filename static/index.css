@@ -24,12 +24,15 @@
 
 .nav-link {
 	color: black;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .header {
 	font-size: 18px;
 	margin: 20px 20px 0 20px;
 	display: flex;
+	justify-content: space-between;
 }
 
 .content {
