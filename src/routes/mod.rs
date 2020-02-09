@@ -1,10 +1,16 @@
 use yew::prelude::*;
 use yew_router::{route::Route, service::RouteService, Switch};
 
-use crate::screens::{contact::Contact, dashboard::Dashboard};
+use crate::screens::{
+    blog::blog_components::blog_1::Blog1, blog::Blog, contact::Contact, dashboard::Dashboard,
+};
 
 #[derive(Switch, Clone, Debug)]
 pub enum Routes {
+    #[to = "/#xamarin-why-and-why-not"]
+    Blog1Route,
+    #[to = "/#blog"]
+    BlogRoute,
     #[to = "/#contact"]
     ContactRoute,
     #[to = "/"]
@@ -54,6 +60,8 @@ impl Component for Navigation {
         match msg {
             Msg::ChangeRoute(route) => {
                 let route_string = match route {
+                    Routes::Blog1Route => format!("/#xamarin-why-and-why-not"),
+                    Routes::BlogRoute => format!("/#blog"),
                     Routes::ContactRoute => format!("/#contact"),
                     Routes::DashboardRoute => format!("/"),
                 };
@@ -82,7 +90,7 @@ impl Component for Navigation {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick=&self.change_route(Routes::ContactRoute) >
+                            <a class="nav-link" onclick=&self.change_route(Routes::BlogRoute) >
                                 {"Blog"}
                             </a>
                         </li>
@@ -101,8 +109,10 @@ impl Component for Navigation {
                 <div class="content">
                     {
                         match Routes::switch(self.route.clone()) {
-                            Some(Routes::DashboardRoute) => html!{<Dashboard />},
+                            Some(Routes::Blog1Route) => html!{<Blog1 />},
+                            Some(Routes::BlogRoute) => html!{<Blog />},
                             Some(Routes::ContactRoute) => html!{<Contact />},
+                            Some(Routes::DashboardRoute) => html!{<Dashboard />},
                             None => html!{ <div>{"Route Not Found! 404"}</div> }
                         }
                     }

@@ -1,5 +1,9 @@
 use yew::prelude::*;
 
+pub mod blog_components;
+
+use blog_components::blog_list::BlogList;
+
 pub struct Blog {}
 
 impl Component for Blog {
@@ -16,9 +20,10 @@ impl Component for Blog {
 
     fn view(&self) -> Html {
         html! {
-            <>
-                <div class="qoute">{"Blog Me!"}</div>
-            </>
+            <div class="blog">
+                <h2>{"Blog"}</h2>
+                <BlogList />
+            </div>
         }
     }
 }

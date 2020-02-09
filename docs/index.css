@@ -1,9 +1,14 @@
+body {
+	overflow-x: hidden;
+}
+
 .container {
 	background: #fff;
 	box-shadow: 0 1px 15px rgba(27, 31, 35, 0.15);
 	display: grid;
 	grid: "a" 70px "b" 1fr;
 	min-height: calc(100vh - 20px);
+	padding: 1px;
 }
 
 .nav-container {
@@ -26,15 +31,27 @@
 	color: black;
 }
 
+.nav-link,
+.link {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .header {
 	font-size: 18px;
 	margin: 20px 20px 0 20px;
 	display: flex;
+	justify-content: space-between;
 }
 
 .content {
-	width: 100%;
+	width: calc(100% - 60px);
 	min-height: 80%;
+	margin: 0 auto;
+}
+
+.dashboard {
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
