@@ -2,13 +2,16 @@ use yew::prelude::*;
 use yew_router::{route::Route, service::RouteService, Switch};
 
 use crate::screens::{
-    blog::blog_components::blog_1::Blog1, blog::Blog, contact::Contact, dashboard::Dashboard,
+    blog::blog_components::blog_1::Blog1, blog::blog_components::blog_2::Blog2, blog::Blog,
+    contact::Contact, dashboard::Dashboard,
 };
 
 #[derive(Switch, Clone, Debug)]
 pub enum Routes {
     #[to = "/#xamarin-why-and-why-not"]
     Blog1Route,
+    #[to = "/#cat-dead-or-not"]
+    Blog2Route,
     #[to = "/#blog"]
     BlogRoute,
     #[to = "/#contact"]
@@ -61,6 +64,7 @@ impl Component for Navigation {
             Msg::ChangeRoute(route) => {
                 let route_string = match route {
                     Routes::Blog1Route => format!("/#xamarin-why-and-why-not"),
+                    Routes::Blog2Route => format!("/#cat-dead-or-not"),
                     Routes::BlogRoute => format!("/#blog"),
                     Routes::ContactRoute => format!("/#contact"),
                     Routes::DashboardRoute => format!("/"),
@@ -110,6 +114,7 @@ impl Component for Navigation {
                     {
                         match Routes::switch(self.route.clone()) {
                             Some(Routes::Blog1Route) => html!{<Blog1 />},
+                            Some(Routes::Blog2Route) => html!{<Blog2 />},
                             Some(Routes::BlogRoute) => html!{<Blog />},
                             Some(Routes::ContactRoute) => html!{<Contact />},
                             Some(Routes::DashboardRoute) => html!{<Dashboard />},

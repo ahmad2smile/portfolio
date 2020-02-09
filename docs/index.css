@@ -45,9 +45,9 @@ body {
 }
 
 .content {
-	width: calc(100% - 60px);
+	width: 80%;
 	min-height: 80%;
-	margin: 0 auto;
+	margin: 0 10%;
 }
 
 .dashboard {

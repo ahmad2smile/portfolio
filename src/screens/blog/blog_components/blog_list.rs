@@ -10,7 +10,7 @@ impl Component for BlogList {
         BlogList {}
     }
 
-    fn update(&mut self, _: <Self as yew::html::Component>::Message) -> bool {
+    fn update(&mut self, _msg: Self::Message) -> bool {
         unimplemented!()
     }
 
@@ -21,6 +21,11 @@ impl Component for BlogList {
                     <h4>{"Xamarin, Why & Why Not"}</h4>
                     <p>{"Some light on Xamarin through the lense of frontend perspective in the space of React Native and Flutter..."}</p>
                     <a href="#xamarin-why-and-why-not" class="link">{"Read more"}</a>
+                </div>
+                <div class="blog-item">
+                    <h4>{"Schrödinger's Cat and decision making on Diminishes Returns"}</h4>
+                    <p>{"So Schrödinger's Cat is in the box with the poison to be triggered at some random timer..."}</p>
+                    <a href="#cat-dead-or-not" class="link">{"Read more"}</a>
                 </div>
             </div>
         }
